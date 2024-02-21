@@ -53,15 +53,15 @@ ENV ROS_MASTER_URI http://devhost:11311/
 # Do this ---->
 # Copy our customized/cloned catkin_ws/src into the image
 # Note: catkin_ws/src MUST be in same directory as this dockerfile, symbolic links won't work
-# COPY catkin_ws/src $ROS_WS/src
+COPY . $ROS_WS/src/diffbot
 
 # OR this ---->
 # To build from the official diffbot repo on github, instead of your 
 # custom catkin_ws, just comment-out the COPY above and then uncomment the following two commands
-RUN git -C src clone \
-    -b noetic-devel \  
-    https://github.com/ros-mobile-robots/diffbot.git
-RUN vcs import < $ROS_WS/src/diffbot/diffbot_dev.repos
+#RUN git -C src clone \
+#    -b noetic-devel \  
+#    https://github.com/ros-mobile-robots/diffbot.git
+#RUN vcs import < $ROS_WS/src/diffbot/diffbot_dev.repos
 
 # Install diffbot ROS package dependencies
 RUN rosdep update
