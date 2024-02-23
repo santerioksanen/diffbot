@@ -40,7 +40,8 @@ RUN apt install -y \
       ros-noetic-geographic-msgs \
       libgeographic-dev \
       ros-noetic-rqt \
-      ros-noetic-rqt-robot-plugins
+      ros-noetic-rqt-robot-plugins \
+      ros-noetic-image-transport-plugins
 
 # Set location of our container's catkin workspace
 ENV ROS_WS /opt/ros_ws
